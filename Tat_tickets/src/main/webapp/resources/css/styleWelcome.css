@@ -1,0 +1,22 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.welcome-container {
+    background: linear-gradient(to top, #6ca278, #055918);
+    color: #fff;
+    height: 100vh;
+}
+
+.logo {
+    transition: transform 0.3s ease-in-out;
+    max-width: 40%;
+    margin-bottom: 20px;
+}
+
+.logo:hover {
+    transform: scale(1.15);
+}
+
