@@ -18,11 +18,23 @@
             <p class="lead">Oops! Something went wrong.</p>
             <hr class="my-4">
             <p class="lead">The page you are looking for might be in another arena.</p>
-            <a class="btn btn-success btn-lg animate__animated animate__pulse" href="sign-in" role="button">Go Back to Home</a>
+            <a class="btn btn-success btn-lg animate__animated animate__pulse" href="/tickets/sign-in" role="button">Go Back to Home</a>
         </div>
     </div>
 </div>
 
 <script src="resources/js/error.js"></script>
+<script>
+    function openNew() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "sign-in", true)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                window.location.href = 'sign-in';
+            }
+        };
+        xhr.send();
+    }
+</script>
 </body>
 </html>

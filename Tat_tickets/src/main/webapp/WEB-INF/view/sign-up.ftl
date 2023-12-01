@@ -12,14 +12,17 @@
     <div class='form'>
         <form method="post">
             <input type="text" placeholder='Имя' class='text' name="firstName" required><br>
-            <input type="text" placeholder='Фамилия' class='text' name="secondName" required><br>
-            <input type="text" placeholder='Почта' class='text' name="email" required><br>
+            <input type="text" placeholder='Фамилия' class='text' name="lastName" required><br>
+            <input type="email" placeholder='Почта' class='text' name="email" required><br>
             <div class='password-container'>
                 <input type="password" placeholder='Пароль' class='password' name="password" id="password" required>
                 <img src="imgs/show.png" alt="Show Password" class='eye-img' onclick="togglePasswordVisibility()">
             </div>
-            <input type="submit" class='btn-login' value="Войти">
-            <a href="sign-up" class='forgot'>Создать новый аккаунт?</a>
+            <#if errorMessage??>
+                <div class="error_message">${errorMessage}</div>
+            </#if>
+            <a href="sign-in" class='forgot'>Авторизоваться</a>
+            <input type="submit" class='btn-login' value="Зарегистрироваться">
         </form>
     </div>
 </div>

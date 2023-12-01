@@ -42,6 +42,7 @@ public class SignUpServlet extends HttpServlet {
         try {
             user = signUpService.signUp(form);
         } catch (ValidationException e) {
+            req.setAttribute("errorMessage", e.getMessage());
             req.getRequestDispatcher("sign-up.ftl").forward(req, resp);
             return;
         }

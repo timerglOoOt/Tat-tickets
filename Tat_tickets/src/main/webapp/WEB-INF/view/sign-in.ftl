@@ -11,7 +11,7 @@
     <p class='msg'>Добро пожаловать!</p>
     <div class='form'>
         <form method="post">
-            <input type="text" placeholder='Почта' class='text' name="email" required><br>
+            <input type="email" placeholder='Почта' class='text' name="email" required><br>
             <div class='password-container'>
                 <input type="password" placeholder='Пароль' class='password' name="password" id="password" required>
                 <img src="imgs/show.png" alt="Show Password" class='eye-img' onclick="togglePasswordVisibility()">

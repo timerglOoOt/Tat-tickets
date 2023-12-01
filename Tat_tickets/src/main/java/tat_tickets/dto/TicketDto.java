@@ -11,7 +11,7 @@ public class TicketDto {
     private Integer ticketId;
     private String sectorName;
     private int seatNumber;
-    private double price;
+    private int price;
     private TicketStatus status;
     private Integer gameId;
 }

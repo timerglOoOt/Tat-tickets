@@ -8,8 +8,10 @@ import tat_tickets.services.PasswordEncoder;
 import tat_tickets.services.SignUpService;
 import tat_tickets.services.validation.ErrorEntity;
 import tat_tickets.services.validation.Validator;
+import tat_tickets.utils.exceptions.TicketsException;
 import tat_tickets.utils.exceptions.ValidationException;
 import tat_tickets.utils.mappers.UserMapper;
+import tat_tickets.utils.mappers.impl.UserMapperImpl;
 
 import java.util.Optional;
 
@@ -17,7 +19,7 @@ public class SignUpServiceImpl implements SignUpService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
     private final Validator validator;
-    private UserMapper userMapper;
+    private UserMapper userMapper = new UserMapperImpl();
 
     public SignUpServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder, Validator validator) {
         this.userRepository = userRepository;
@@ -25,18 +27,18 @@ public class SignUpServiceImpl implements SignUpService {
         this.validator = validator;
     }
     @Override
-    public UserDto signUp(SignUpForm signUpForm) throws ValidationException {
-        Optional<ErrorEntity> optionalError = validator.validateSignUp(signUpForm);
-        if(optionalError.isPresent()) {
-            throw new ValidationException(optionalError.get());
+    public UserDto signUp(SignUpForm form) throws TicketsException {
+        if (form.getEmail() == null) {
+            throw new TicketsException("Email cannot be null");
         }
-        User user = User.builder()
-                .email(signUpForm.getEmail())
-                .firstName(signUpForm.getFirstName())
-                .lastName(signUpForm.getLastName())
-                .hashedPassword(passwordEncoder.hash(signUpForm.getPassword()))
-                .build();
-        userRepository.save(user);
-        return userMapper.toDto(user);
+        Optional<User> optionalUser = userRepository.findByEmail(form.getEmail());
+        if (optionalUser.isPresent()) {
+            throw new TicketsException("User with email " + form.getEmail() + " already exist");
+        }
+        form.setPassword(passwordEncoder.hash(form.getPassword()));
+        System.out.println(form);
+        User user = userMapper.toUser(form);
+        User savedUser = userRepository.save(user);
+        return userMapper.toDto(savedUser);
     }
 }

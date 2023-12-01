@@ -9,7 +9,7 @@ public class Ticket {
     private Integer id;
     private String sectorName;
     private int seatNumber;
-    private double price;
+    private int price;
     private boolean status;
     private Integer gameId;
 }

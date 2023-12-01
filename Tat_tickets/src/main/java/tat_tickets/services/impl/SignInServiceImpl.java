@@ -7,26 +7,35 @@ import tat_tickets.models.User;
 import tat_tickets.services.PasswordEncoder;
 import tat_tickets.services.SignInService;
 import tat_tickets.services.validation.ErrorEntity;
+import tat_tickets.utils.exceptions.TicketsException;
 import tat_tickets.utils.exceptions.ValidationException;
 import tat_tickets.utils.mappers.UserMapper;
+import tat_tickets.utils.mappers.impl.UserMapperImpl;
+
+import java.util.Optional;
 
 public class SignInServiceImpl implements SignInService {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
-    private UserMapper userMapper;
+    private UserMapper userMapper = new UserMapperImpl();
 
     public SignInServiceImpl(UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
 
-    @Override
-    public UserDto signIn(SignInForm signInForm) throws ValidationException {
-        User user = userRepository.findByEmail(signInForm.getEmail())
-                .orElseThrow(() -> new ValidationException(ErrorEntity.NOT_FOUND));
-        if (!passwordEncoder.matches(signInForm.getPassword(), user.getHashedPassword())) {
-            throw new ValidationException(ErrorEntity.INCORRECT_PASSWORD);
+    public UserDto signIn(SignInForm form) throws TicketsException {
+        if(form.getEmail() == null) {
+            throw new TicketsException("Email cannot be null");
         }
-       return userMapper.toDto(user);
+        Optional<User> optionalUser = userRepository.findByEmail(form.getEmail());
+        if(optionalUser.isEmpty()) {
+            throw new TicketsException("User with email " + form.getEmail() + " not found.");
+        }
+        User user = optionalUser.get();
+        if(!passwordEncoder.matches(form.getPassword(), user.getHashedPassword())) {
+            throw new TicketsException("Wrong password");
+        }
+        return userMapper.toDto(user);
     }
 }

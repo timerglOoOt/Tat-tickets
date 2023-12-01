@@ -16,18 +16,18 @@ import java.util.Optional;
 
 public class UserRepositoryImpl implements UserRepository {
     //language=sql
-    private final static String SQL_INSERT = "insert into users(first_name, last_name, email, hashed_password, avatar_id) " +
-            "values (?, ?, ?, ?, ?)";
+    private final static String SQL_INSERT = "insert into users(first_name, last_name, email, hashed_password, avatar_id)" +
+            "values (?, ?, ?, ?, ?);";
     //language=sql
-    private final static String SQL_UPDATE = "update users set first_name = ?, last_name = ?, email = ?, hashed_password = ?, avatar_id = ? where id = ?";
+    private final static String SQL_UPDATE = "update users set first_name = ?, last_name = ?, email = ?, hashed_password = ?, avatar_id = ? where id = ?;";
     //language=sql
-    private final static String SQL_FIND_BY_ID = "select * from users where id = ?";
+    private final static String SQL_FIND_BY_ID = "select * from users where id = ?;";
     //language=sql
-    private final static String SQL_FIND_BY_EMAIL = "select * from users where email = ?";
+    private final static String SQL_FIND_BY_EMAIL = "select * from users where email = ?;";
     //language=sql
     private final static String SQL_FIND_ALL = "select * from users;";
     //language=sql
-    private final static String SQL_DELETE_BY_ID = "delete from users where id = ?";
+    private final static String SQL_DELETE_BY_ID = "delete from users where id = ?;";
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -37,6 +37,7 @@ public class UserRepositoryImpl implements UserRepository {
             .lastName(row.getString("last_name"))
             .email(row.getString("email"))
             .hashedPassword(row.getString("hashed_password"))
+            .avatarId(row.getInt("avatar_id"))
             .build();
     public UserRepositoryImpl(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
@@ -62,8 +63,8 @@ public class UserRepositoryImpl implements UserRepository {
             PreparedStatement statement = connection.prepareStatement(SQL_INSERT, new String[]{"id"});
             statement.setString(1, item.getFirstName());
             statement.setString(2, item.getLastName());
-            statement.setString(4, item.getEmail());
-            statement.setString(3, item.getHashedPassword());
+            statement.setString(3, item.getEmail());
+            statement.setString(4, item.getHashedPassword());
             if(item.getAvatarId() != null) {
                 statement.setLong(5, item.getAvatarId());
             } else {
