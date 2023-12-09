@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background: linear-gradient(to top, #6ca278, #055918);
     font-family: Assistant, sans-serif;
@@ -93,4 +94,110 @@ body {
     cursor: pointer;
     width: 25px;
     height: auto;
+=======
+body {
+    background: linear-gradient(to top, #6ca278, #055918);
+    font-family: Assistant, sans-serif;
+    display: flex;
+    min-height: 100vh;
+}
+.login {
+    color: black;
+    background: white;
+    margin: auto;
+    box-shadow:
+            0 2px 10px rgba(0,0,0,0.2),
+            0 10px 20px rgba(0,0,0,0.3),
+            0 30px 60px 1px rgba(0,0,0,0.5);
+    border-radius: 8px;
+    padding: 50px;
+}
+.login .head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login .head .auth {
+    font-size: 2.5em;
+}
+.login .msg {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.login .form .text {
+    border: none;
+    /*border-radius: 0;*/
+    background: none;
+    box-shadow: 0 2px 0 0 black;
+    width: 100%;
+    color: black;
+    font-size: 1.3em;
+    outline: none;
+    margin-bottom: 20px;
+}
+.login .form .form-control::placeholder {
+    color: #8a8585;
+}
+.login .form .password {
+    border: none;
+    background: none;
+    box-shadow: 0 2px 0 0 black;
+    width: 100%;
+    color: black;
+    font-size: 1.3em;
+    outline: none;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+.login .form .password::placeholder {
+    color: #8a8585;
+}
+.login .form .btn-login {
+    background: none;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 0 2px white;
+    border-radius: 3px;
+    padding: 5px 2em;
+    transition: 0.5s;
+}
+.login .form .btn-login:hover {
+    background: #218838;
+    color: white;
+    transition: 0.5s;
+}
+.login .forgot {
+    font-size: 1.1em;
+    text-decoration: none;
+    color: black;
+    float: right;
+    margin-left: 55px;
+    margin-top: 5px;
+}
+
+.login .forgot:hover {
+    text-decoration: underline #218838;
+}
+
+.password-container {
+    position: relative;
+}
+
+.eye-img {
+    position: absolute;
+    top: 20%;
+    right: 10px;
+    cursor: pointer;
+    width: 25px;
+    height: auto;
+}
+
+.error-message {
+    color: #721c24; /* Error message text color */
+    background-color: #f8d7da; /* Error message background color */
+    border: 1px solid #f5c6cb; /* Error message border color */
+    padding: 10px; /* Padding around the error message */
+    margin-bottom: 20px; /* Bottom margin for spacing */
+    border-radius: 5px; /* Border radius for rounded corners */
+>>>>>>> d23f224 (feat: add done project)
 }

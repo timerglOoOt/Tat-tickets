@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="SqlDialectMappings">
     <file url="file://$PROJECT_DIR$/src/main/resources/shema.sql" dialect="PostgreSQL" />
   </component>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SqlDialectMappings">
+    <file url="file://$PROJECT_DIR$/src/main/java/tat_tickets/dao/impl/FileInfoRepositoryImpl.java" dialect="PostgreSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/shema.sql" dialect="PostgreSQL" />
+  </component>
+>>>>>>> d23f224 (feat: add done project)
 </project>

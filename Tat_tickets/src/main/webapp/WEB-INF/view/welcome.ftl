@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/css/styleWelcome.css">
+</head>
+
+<body>
+<div class="container-fluid welcome-container">
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col-md-6 text-center">
+            <img onclick="openNew()" src="imgs/logo.png" alt="Ak Bars Logo" class="logo img-fluid">
+            <h1 class="mt-4">Для любителей лучшего.</h1>
+        </div>
+    </div>
+</div>
+
+<script>
+    function openNew() {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "sign-in", true)
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                window.location.href = 'sign-in';
+            }
+        };
+        xhr.send();
+    }
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package tat_tickets.utils.exceptions;
 
 public class DbException extends Exception {
@@ -21,3 +22,28 @@ public class DbException extends Exception {
         super(message, cause, enableSuppression, writableStackTrace);
     }
 }
+=======
+package tat_tickets.utils.exceptions;
+
+public class DbException extends Exception {
+    public DbException() {
+        super();
+    }
+
+    public DbException(String message) {
+        super(message);
+    }
+
+    public DbException(String message, Throwable cause) {
+        super(message, cause);
+    }
+
+    public DbException(Throwable cause) {
+        super(cause);
+    }
+
+    protected DbException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
+        super(message, cause, enableSuppression, writableStackTrace);
+    }
+}
+>>>>>>> d23f224 (feat: add done project)

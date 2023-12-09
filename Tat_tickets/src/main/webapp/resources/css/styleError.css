@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
     background-color: #fff;
     color: #28a745;
@@ -59,3 +60,66 @@ textarea {
         transform: scale(1.1);
     }
 }
+=======
+body {
+    background-color: #fff;
+    color: #28a745;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    font-size: 150px;
+    color: #28a745;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    font-weight: bold;
+    transition: background-color 0.6s ease-in-out;
+}
+
+.btn-success:hover {
+    background-color: #218838;
+    border-color: #1e7e34;
+}
+
+.modal-content {
+    background-color: #fff;
+    color: #28a745;
+}
+
+.modal-header {
+    border-bottom: 2px solid #28a745;
+}
+
+.modal-title {
+    color: #28a745;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-footer {
+    border-top: 2px solid #28a745;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.animate__pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+>>>>>>> d23f224 (feat: add done project)

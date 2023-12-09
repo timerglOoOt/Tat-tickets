@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package tat_tickets.utils.exceptions;
 
 import tat_tickets.services.validation.ErrorEntity;
@@ -15,3 +16,22 @@ public class ValidationException extends RuntimeException {
         this.entity = entity;
     }
 }
+=======
+package tat_tickets.utils.exceptions;
+
+import tat_tickets.services.validation.ErrorEntity;
+
+public class ValidationException extends RuntimeException {
+    private final ErrorEntity entity;
+
+    public ValidationException(ErrorEntity entity) {
+        super(entity.getMessage());
+        this.entity = entity;
+    }
+
+    public ValidationException(ErrorEntity entity, String message) {
+        super(message);
+        this.entity = entity;
+    }
+}
+>>>>>>> d23f224 (feat: add done project)

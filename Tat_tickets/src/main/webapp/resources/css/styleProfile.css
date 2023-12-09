@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .user-info{
     font-size: 20px;
@@ -21,4 +22,247 @@
 .under-photo{
     width: 80%;
     margin-left: 0;
+=======
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f2f2f2;
+    padding: 10px;
+}
+
+.tab-btn {
+    background-color: #e0e0e0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.tab-btn:hover {
+    background-color: #d0d0d0;
+}
+
+.tab-content {
+    display: none;
+}
+
+#profileTab {
+    display: block;
+}
+
+.user-info {
+    font-size: 20px;
+    margin: 10px;
+    width: auto;
+}
+
+.user-avatar {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.user-info-text {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.user-info label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user-info span {
+    display: block;
+    font-size: 18px;
+    color: #333;
+}
+
+#changeProfileBtn, #changeAvatarBtn {
+    background: none;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 0 2px white;
+    border-radius: 3px;
+    padding: 5px 2em;
+    transition: 0.5s;
+    margin: 5px auto;
+    border: none;
+}
+
+#changeProfileBtn:hover, #changeAvatarBtn:hover {
+    background: #218838;
+    color: white;
+    transition: 0.5s;
+}
+
+
+#ticketsTab {
+    padding: 20px;
+}
+
+.booking-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.booking-item p {
+    margin: 5px 0;
+}
+
+/* Add this style to the existing CSS */
+
+.profile-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.profile-buttons .btn {
+    margin: 0 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.profile-buttons .btn:hover {
+    background-color: #d0d0d0;
+}
+
+/* Style for the "Change Profile" button */
+#changeProfileBtn {
+    background: none;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 0 2px white;
+    border-radius: 3px;
+    padding: 5px 2em;
+    transition: 0.5s;
+}
+
+#changeProfileBtn:hover {
+    background: #218838;
+    color: white;
+    transition: 0.5s;
+}
+
+/* Style for the "Change Avatar" button */
+.profile-buttons form .btn {
+    background: none;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 0 0 2px white;
+    border-radius: 3px;
+    padding: 5px 2em;
+    transition: 0.5s;
+}
+
+.profile-buttons form .btn:hover {
+    background: #218838;
+    color: white;
+    transition: 0.5s;
+}
+
+
+/* Profile Modal Styles */
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Profile Modal Form Styles */
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-content label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Style for the "Change" button inside the modal */
+
+.modal-content button {
+    background-color: #218838;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #1e7e34;
+}
+
+.user-avatar {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    width: 150px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.error-message {
+    color: #721c24; /* Error message text color */
+    background-color: #f8d7da; /* Error message background color */
+    border: 1px solid #f5c6cb; /* Error message border color */
+    padding: 10px; /* Padding around the error message */
+    margin-bottom: 20px; /* Bottom margin for spacing */
+    border-radius: 5px; /* Border radius for rounded corners */
+>>>>>>> d23f224 (feat: add done project)
 }
